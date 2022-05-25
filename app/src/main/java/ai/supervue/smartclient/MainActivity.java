@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         validate();
 
-
     }
 
     private void validate() {
@@ -64,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.user.provider/users"), null, null, null, null);
 
+        Toast.makeText(MainActivity.this,"Download request send",Toast.LENGTH_LONG).show();
         if (cursor.moveToFirst()) {
             Log.e("update", "........");
             getContentResolver().update(MyContentProvider.CONTENT_URI, values, null, null);
